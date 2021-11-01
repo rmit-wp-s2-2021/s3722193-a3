@@ -1,0 +1,16 @@
+.header {
+    background-color: grey;
+}
+
+.left {
+    float: inline-start;
+}
+
+.right {
+    float: inline-end;
+}  
+
+.icon {
+    height: 2%;
+    width: 2%;
+}
