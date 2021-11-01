@@ -1,16 +1,28 @@
 .header {
     background-color: grey;
+    background: grey;
 }
 
 .left {
-    float: inline-start;
+    display: inline-block;
+    width: 50%;
 }
 
 .right {
-    float: inline-end;
+    display: inline-block;
+    width: 50%;
 }  
 
 .icon {
     height: 2%;
     width: 2%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.input {
+    width:50%;
 }

@@ -2,7 +2,15 @@
     //call the validation for reserve form
     require_once('validation.php');
 ?>
+<?php
+$errors = [];
+if (isset($_POST['register'])) {
+    $errors = reserve($_POST);
 
+    if (count($errors) === 0)
+        redirect('myServices.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,14 +31,14 @@
                     <div class="left">
                         <img src="media/name.png" class="icon">
                         <label for="name">Name</label>       
-                        <input type="text" class="form-control" id="name" name="name" <?php displayValue($_POST, 'name'); ?> />
+                        <input type="text" class="input" id="name" name="name" <?php displayValue($_POST, 'name'); ?> />
                         <?php displayError($errors, 'name'); ?>
                     </div>
 
                     <div class="right">
                         <img src="media/meal.png" class="icon">
                         <label for="meal">Meal</label>
-                        <select class="form-control" id="meal" name="meal" <?php displayValue($_POST, 'meal'); ?> >
+                        <select class="input" id="meal" name="meal" <?php displayValue($_POST, 'meal'); ?> >
                         <option value="breakfast">Breakfast</option>
                         <option value="lunch">Lunch</option>
                         <option value="dinner">Dinner</option>
@@ -41,35 +49,35 @@
                     <div class="left">
                         <img src="media/date.png" class="icon">
                         <label for="date">Date</label>
-                        <input type="date" class="form-control" id="date" name="date" <?php displayValue($_POST, 'date'); ?> />
+                        <input type="date" class="input" id="date" name="date" <?php displayValue($_POST, 'date'); ?> />
                         <?php displayError($errors, 'Date'); ?>
                     </div>
 
                     <div class="right">
                         <img src="media/time.png" class="icon">
                         <label for="time">Time</label>
-                        <input type="text" class="form-control" id="time" name="time" <?php displayValue($_POST, 'time'); ?> />
+                        <input type="text" class="input" id="time" name="time" <?php displayValue($_POST, 'time'); ?> />
                         <?php displayError($errors, 'time'); ?>
                     </div>
 
                     <div class="left">
                         <img src="media/guest.png" class="icon">
                         <label for="guests">Guests</label>
-                        <input type="text" class="form-control" id="guests" name="guests" <?php displayValue($_POST, 'guests'); ?> />
+                        <input type="text" class="input" id="guests" name="guests" <?php displayValue($_POST, 'guests'); ?> />
                         <?php displayError($errors, 'guests'); ?>
                     </div>
 
                     <div class="right">
                         <img src="media/food.png" class="icon">
                         <label for="food-pref">Food preferences</label>
-                        <input type="text" class="form-control" id="food-pref" name="food-pref" <?php displayValue($_POST, 'food-pref'); ?> />
+                        <input type="text" class="input" id="food-pref" name="food-pref" <?php displayValue($_POST, 'food-pref'); ?> />
                         <?php displayError($errors, 'food-pref'); ?>
                     </div>
 
                     <div class="left">
                         <img src="media/special.png" class="icon">
                         <label for="special-req">Special requests</label>
-                        <input type="text" class="form-control" id="special-req" name="special-req" <?php displayValue($_POST, 'special-req'); ?> />
+                        <input type="text" class="input" id="special-req" name="special-req" <?php displayValue($_POST, 'special-req'); ?> />
                         <?php displayError($errors, 'special-req'); ?>
                     </div>
 
