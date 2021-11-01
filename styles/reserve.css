@@ -3,24 +3,34 @@
     background: grey;
 }
 
-.left {
-    display: inline-block;
+.box1 {
+    grid-column: 1;
+    float: left;
     width: 50%;
 }
 
-.right {
-    display: inline-block;
+.box2 {
+    grid-column: 2;
+    float: left;
     width: 50%;
 }  
 
+.special {
+    grid-column: 1;
+    column-span: 2;
+    float: left;
+    width: 100%;
+}
+
 .icon {
-    height: 2%;
-    width: 2%;
+    height: 5%;
+    width: 5%;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
 }
 
 .input {
